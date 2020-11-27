@@ -1,9 +1,12 @@
+.ml5 {
+  margin-left: 5px;
+}
 .item {
   border: solid 1px grey;
   padding: 15px;
   font-size: 14px;
   color: grey;
-  line-height: 21px;
+  line-height: 22px;
 }
 
 .item .title {
@@ -13,21 +16,15 @@
   color: #009a61;
 }
 
-.vote {
-
-}
-.vote img {
+.item img {
   width: auto;
   height: 20px;
-  vertical-align: middle;
   cursor: pointer;
 }
 
-.item .vote span {
+.item span,
+.item img {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-
-  width: 20px;
-  height: 20px;
 }

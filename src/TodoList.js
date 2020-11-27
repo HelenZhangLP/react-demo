@@ -51,6 +51,7 @@ class TodoList extends React.Component {
     }
     this.timer = null; // 用于模拟服务返回数据
     this.handleVote = this.handleVote.bind(this)
+    this.handleList = this.handleList.bind(this)
   }
 
   componentDidMount() {
@@ -84,6 +85,19 @@ class TodoList extends React.Component {
     })
   }
 
+  handleList(item) {
+    const list = this.state.list.map(i => {
+      if (item.id === i.id) {
+        return item
+      }
+      return i
+    })
+
+    this.setState({
+      list
+    })
+  }
+
   render() {
     {/* this.handleVote.bind(this) 手动绑定 this 对象 */}
     {/**
@@ -99,7 +113,8 @@ class TodoList extends React.Component {
             <TodoItem
               key = {item.id}
               listItem = { item }
-              onVote = { this.handleVote } />)
+              onVote = { this.handleVote }
+              onSave = { this.handleList } />)
           }
         </ul>
       </div>
