@@ -21,6 +21,10 @@ todoList() {
 1.  class 必须继承自 React.Component
 2.  class 内部定义 render 方法，返回代表该组件的 UI。render 是定义组件时的唯一必要方法。
 
+### 组件的 props 和 state
+react 使用 props、state 两种类型的数据驱动渲染组件 UI
+props 组件对外接口，组件通过 props 接收数据、方法，props 只读，不能在组件内部修改 props
+state 组件对内接口，组件内部变化通过 state 反映，组件状态通过 setState 修改。
 
 ## Each child in a list should have a unique "key" prop.
 key 是用来标记每个元素的，当列表更新时，元素通过 key 知道每个哪些元素发生了变化，进而渲染发生变化的元素，提高渲染效率
