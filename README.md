@@ -2,7 +2,7 @@
 ## .package.json.swp
 `swp 文件是一个临时交换文件，用来备份缓冲区中的内容，用于保存数据。当文件非正常关闭（比如直接关闭终端或者电脑断电等）时，文件不会被删除，可用此文件来恢复；当正常关闭时，此文件会被删除。`
 
-## `<button onClick={this.todoList}>add</button>` compare `<button onClick={this.todoList.bind(this)}></button>`
+**`<button onClick={this.todoList}>add</button>` compare `<button onClick={this.todoList.bind(this)}></button>`**
 ```javascript
 todoList() {
   console.log(this)
