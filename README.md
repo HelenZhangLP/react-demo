@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## .package.json.swp
+`swp 文件是一个临时交换文件，用来备份缓冲区中的内容，用于保存数据。当文件非正常关闭（比如直接关闭终端或者电脑断电等）时，文件不会被删除，可用此文件来恢复；当正常关闭时，此文件会被删除。`
 
-In the project directory, you can run:
+## `<button onClick={this.todoList}>add</button>` compare `<button onClick={this.todoList.bind(this)}></button>`
+```javascript
+todoList() {
+  console.log(this)
+}
+```
+>`<button onClick={this.tsodoList}>add</button>`
+> // undefined
 
-### `yarn start`
+>`<button onClick={this.todoList.bind(this)}></button>`
+>// TodoList...
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### * 重要原则： * javascript this 指向运行时对象，而非渲染对象
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## react 基础
+### 定义组件的两个条件：
+1.  class 必须继承自 React.Component
+2.  class 内部定义 render 方法，返回代表该组件的 UI。render 是定义组件时的唯一必要方法。
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Each child in a list should have a unique "key" prop.
+key 是用来标记每个元素的，当列表更新时，元素通过 key 知道每个哪些元素发生了变化，进而渲染发生变化的元素，提高渲染效率
+不要 index 索引作 key，因为一旦数据列表发生重排，索引也会发生变化，不利于渲染优化
+key 值唯一只针对当前列表，不是针对全局。

@@ -1,0 +1,33 @@
+.item {
+  border: solid 1px grey;
+  padding: 15px;
+  font-size: 14px;
+  color: grey;
+  line-height: 21px;
+}
+
+.item .title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #009a61;
+}
+
+.vote {
+
+}
+.vote img {
+  width: auto;
+  height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.item .vote span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; //西文中没有衬线的字体，敢不敢汉字字体中的黑体相对应
+}
+
+ul {
+  list-style: none;
+}
