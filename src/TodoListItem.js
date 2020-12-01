@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './TodoItem.css';
+import './style/TodoItem.css';
 import voteImg from "./images/vote.jpg";
 import saveImg from "./images/save.jpg";
 import editImg from "./images/edit.jpg";

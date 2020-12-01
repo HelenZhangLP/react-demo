@@ -9,7 +9,7 @@ import TodoItem from './TodoListItem';
       引入当前模块只作用于当前组件，相当于私有样式
       全局样式也可通过 import 引用入口 js 文件
  */
-import './TodoList.css';
+import './style/TodoList.css';
 
 /**
  * 定义 react 组件 TodoList
@@ -43,11 +43,12 @@ class TodoList extends React.Component {
    * constructor 初始化组件的 state，绑定事件处理
    */
   constructor(props) {
-    //super(props) 用于调用 React.Component 的 constructor 方法，用来完成 React 组件的初始化工作，只时保证组件 props 传入组件
+    //super(props) 用于调用 React.Component 的 constructor 方法，用来完成 React组件的初始化工作，只时保证组件 props 传入组件
     super(props);
     // this.state 定义组件的状态
     this.state = {
       list: [],
+      time: new Date()
     }
     this.timer = null; // 用于模拟服务返回数据
     this.handleVote = this.handleVote.bind(this)
@@ -64,12 +65,20 @@ class TodoList extends React.Component {
         ],
       })
     }, 1000)
+    this.timerMachine = setInterval(() => {
+      this.setState({
+        time: new Date()
+      })
+    }, 1000)
   }
 
   componentWillUnmount() {
     // 清除定时器
-    if(this.timer) {
+    if (this.timer) {
       clearTimeout(this.timer)
+    }
+    if (this.timerMachine) {
+      clearTimeout(this.timerMachine)
     }
   }
 
@@ -108,6 +117,7 @@ class TodoList extends React.Component {
     */}
     return (
       <div className="container">
+        <div>{this.state.time.toString()}</div>
         <ul>
           { this.state.list.map(item =>
             <TodoItem
